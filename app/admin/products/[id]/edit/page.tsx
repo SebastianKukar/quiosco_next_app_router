@@ -16,8 +16,13 @@ async function getProduct(id : number ) {
     }
     return product
 }
-export default async function EditPage ({params} : {params: Promise<{id:string}>}) {
-    const id = (await params).id
+type Props = {
+    params: Promise<{id: string }>
+}
+export default async function EditPage (
+    params
+  : Props) {
+    const id = (await params.params)?.id
     const product = await getProduct(+id)
   return (
     <>
