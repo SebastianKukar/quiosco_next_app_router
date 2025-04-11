@@ -19,7 +19,7 @@ export default async function Orderpage({
 }) {
     const category = (await params).category
     const products = await getProducts(category)
-  return (
+ if(products) return (
     <>
       <Heading>Elige y personaliza tu orden</Heading>
       <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-4 items-start m-5">
