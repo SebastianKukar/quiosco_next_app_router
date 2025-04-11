@@ -1,9 +1,8 @@
 import ProductCard from "@/components/products/ProductCard"
 import Heading from "@/components/ui/Heading"
 import { prisma } from "@/src/lib/prisma"
-import { Product } from "@prisma/client"
 
-async function getProducts(category: string ) : Promise<Product[]> {
+async function getProducts(category: string ) {
   const products = await prisma.product.findMany({
     where:{
       category:{
