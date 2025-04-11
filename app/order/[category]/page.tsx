@@ -22,13 +22,14 @@ export default async function Orderpage({
     if(!(await params).category){
       throw new Error("esos params no son validos")
     }
-    const category = (await params).category
+    const {category} = (await params)
     const products = await getProducts(category)
- return (
+
+ if(products) return (
     <>
       <Heading>Elige y personaliza tu orden</Heading>
       <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-4 items-start m-5">
-        {products.map((product : Product) => (
+        {products.map((product) => (
           <ProductCard
           key={product.id}
           product={product}
