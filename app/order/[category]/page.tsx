@@ -13,11 +13,15 @@ async function getProducts(category: string ) : Promise<Product[]> {
   })
   return products
 }
+
+type Props = {
+  params: {
+    category: string
+  }
+}
 export default async function Orderpage({
   params,
-}: {
-  params: { category: string };
-}) {
+}: Props) {
     const category = params.category
     const products = await getProducts(category)
  return (
