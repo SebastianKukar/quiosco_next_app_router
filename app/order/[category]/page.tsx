@@ -20,11 +20,11 @@ export default async function Orderpage({
 }) {
     const category = params.category
     const products = await getProducts(category)
- if(products) return (
+ return (
     <>
       <Heading>Elige y personaliza tu orden</Heading>
       <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-4 items-start m-5">
-        {products.map((product) => (
+        {products.map((product : Product) => (
           <ProductCard
           key={product.id}
           product={product}

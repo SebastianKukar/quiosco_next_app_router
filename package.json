@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+  "generate": "prisma generate",
+  "dev:refresh": "prisma generate && next dev",
+  "build:refresh": "prisma generate && next build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
