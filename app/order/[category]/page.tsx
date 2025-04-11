@@ -14,14 +14,13 @@ async function getProducts(category: string ) : Promise<Product[]> {
   return products
 }
 
-type Props = {
-  params: {
-    category: string
-  }
-}
+export type PageProps<TParams extends Record<string, string>> = {
+  params: TParams;
+};
+
 export default async function Orderpage({
   params,
-}: Props) {
+}: PageProps<{category: string}>) {
     const category = params.category
     const products = await getProducts(category)
  return (
