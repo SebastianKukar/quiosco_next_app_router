@@ -10,3 +10,8 @@ export type OrderWithProducts = Order & {
         product: Product
     })[]
 }
+
+export type PageProps<TParams extends Record<string, string>> = {
+    params: TParams;
+  };
+  

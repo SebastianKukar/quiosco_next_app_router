@@ -1,6 +1,7 @@
 import ProductCard from "@/components/products/ProductCard"
 import Heading from "@/components/ui/Heading"
 import { prisma } from "@/src/lib/prisma"
+import { PageProps } from "@/src/types"
 import { Product } from "@prisma/client"
 
 async function getProducts(category: string ) : Promise<Product[]> {
@@ -14,9 +15,6 @@ async function getProducts(category: string ) : Promise<Product[]> {
   return products
 }
 
-export type PageProps<TParams extends Record<string, string>> = {
-  params: TParams;
-};
 
 export default async function Orderpage({
   params,
